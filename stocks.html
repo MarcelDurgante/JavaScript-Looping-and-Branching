@@ -140,6 +140,11 @@
    const rows = table.getElementsByTagName('tr');
 
    let stockData = [];
+   for(let i = 0; i < rows.length; i++) {
+      stockData.push(rows[i].innerText.split('\t'));
+   }
+
+   console.log(stockData);
 
 </script>
 </html>
