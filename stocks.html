@@ -140,11 +140,31 @@
    const rows = table.getElementsByTagName('tr');
 
    let stockData = [];
-   for(let i = 0; i < rows.length; i++) {
+   for(let i = 1; i < rows.length; i++) {
       stockData.push(rows[i].innerText.split('\t'));
    }
 
    console.log(stockData);
+/* 
+   Output: 
+
+   (14) [Array(6), Array(6), Array(6), Array(6), Array(6), Array(6), Array(6), Array(6), Array(6), Array(6), Array(6), Array(6), Array(6), Array(6)]
+0: (6) ['Microsoft', 'MSFT', 'Tech', '7.46', '220', '0.96']
+1: (6) ['Apple', 'APPL', 'Tech', '16.07', '142', '1.25']
+2: (6) ['Amazon', 'AMZN', 'Retail', '10.19', '113', '1.32']
+3: (6) ['Alphabet Inc.', 'GOOG', 'Tech', '13', '100', '1.10']
+4: (6) ['Walmart', 'WMT', 'Retail', '2.71', '131', '0.51']
+5: (6) ['Exxon Mobil', 'XOM', 'Petroleum', '4.17', '101', '1.05']
+6: (6) ['JP Morgan', 'JPM', 'Financial Services', '2.93', '115', '1.07']
+7: (6) ['Intel', 'INTC', 'Tech', '4.11', '26', '0.71']
+8: (6) ['International Business Machines', 'IBM', 'Tech', '0.9', '121', '0.83']
+9: (6) ['Tesla', 'TSLA', 'Automotive', '3.13', '215', '2.13']
+10: (6) ['Pfizer', 'PFE', 'Pharmaceuticals', '5.61', '43', '0.64']
+11: (6) ['DocuSign', 'DOCU', 'Tech', '0.2', '46', '1.21']
+12: (6) ['EPAM Systems', 'EPAM', 'Tech', '0.057', '333', '1.68']
+13: (6) ['GitLab', 'GTLB', 'Software', '0.148', '45', '']
+length: 14 
+*/
 
 </script>
 </html>
