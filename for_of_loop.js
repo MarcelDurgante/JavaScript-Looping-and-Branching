@@ -3,8 +3,8 @@
 const arr = [10, 20, 30];
 
 // Get array values only
-for (let value of arr) {
-    console.log('values: ', value);
+for (let values of arr) {
+    console.log('values: ', values);
 };
 /* output:
 values:  10
@@ -13,14 +13,14 @@ values:  30
 */
 
 // Index value pairs using array.entries()
-for (let [value, index] of arr.entries()) {
-    console.log('value: ', index, 'index: ', value);
+for (let [index, value] of arr.entries()) {
+    console.log('index: ', index,  'value: ',  value);
 };
 /* output:
 
-value:  10 index:  0
-value:  20 index:  1
-value:  30 index:  2
+ index:  0 value:  10
+ index:  1 value:  20
+ index:  2 value:  30
 */
 
 // Using const or let in a 'for...of' loop is ok. But...you cant reassign a const value.
@@ -43,3 +43,4 @@ value:  30
 
 TypeError: Assignment to constant variable.
 */
+
