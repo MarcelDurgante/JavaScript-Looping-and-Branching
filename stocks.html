@@ -363,5 +363,75 @@ stockData_2.forEach(printBeta);
   1.68
   0 
   */
+
+  //  filter method, collect low beta stocks, meaning the beta value has to be less than 1. 
+
+  console.log('Low-beta stocks (< 1): ');
+  const lowBetaStocks = stockData_2.filter(stock => stock.at(5) < 1 );
+  console.log(lowBetaStocks);
+  
+/* output:
+
+(6) [Array(6), Array(6), Array(6), Array(6), Array(6), Array(6)]
+0:(6) ['Microsoft', 'MSFT', 'Tech', '7.46', '220', '0.96']
+1:(6) ['Walmart', 'WMT', 'Retail', '2.71', '131', '0.51']
+2:(6) ['Intel', 'INTC', 'Tech', '4.11', '26', '0.71']
+3:(6) ['International Business Machines', 'IBM', 'Tech', '0.9', '121', '0.83']
+4:(6) ['Pfizer', 'PFE', 'Pharmaceuticals', '5.61', '43', '0.64']
+5:(6) ['GitLab', 'GTLB', 'Software', '0.148', '45', '']
+length:6
+*/
+
+/* What if somebody wanted just the company name and the beta value itself? For that we have the map method, to convert or transform a value. If we take the same array of numbers, we can invoke the map method and say given every price that we iterate over, do whatever, divide and then round and convert to a string and concatenate with a word */
+
+/* console.log('Company - Beta value: ');
+  const lowBetaStocksCompaniesAndBetaOnly = stockData_2
+  .filter(stock => stock.at(5) < 1 )
+  .map(stock => `${stock[0]}: ${stock.at(5)}`)
+  console.log(lowBetaStocksCompaniesAndBetaOnly); 
+*/
+  /* output:
+
+      Company - Beta value: 
+      
+      (6) ['Microsoft: 0.96', 'Walmart: 0.51', 'Intel: 0.71', 'International Business Machines: 0.83', 'Pfizer: 0.64', 'GitLab: ']
+      0: "Microsoft: 0.96"
+      1: "Walmart: 0.51"
+      2: "Intel: 0.71"
+      3: "International Business Machines: 0.83"
+      4: "Pfizer: 0.64"
+      5: "GitLab: "
+      length: 6
+  */
+
+// we can make the code above cleaner
+
+console.log('Company - Beta value Refactored with Functions: ');
+  const lowBetaStocksCompaniesAndBetaOnly = stockData_2
+  .filter(stock => beta(stock) < 1 )
+  .map(stock => `${name(stock)}: ${beta(stock)}`)
+  console.log(lowBetaStocksCompaniesAndBetaOnly);
+
+function name (stock) {
+return stock[0];
+};
+
+function beta (stock) {
+  return stock[5]
+};
+ /* output:
+
+    Company - Beta value Refactored with Functions:
+
+    (6) ['Microsoft: 0.96', 'Walmart: 0.51', 'Intel: 0.71', 'International Business Machines: 0.83', 'Pfizer: 0.64', 'GitLab: ']
+    0: "Microsoft: 0.96"
+    1: "Walmart: 0.51"
+    2: "Intel: 0.71"
+    3: "International Business Machines: 0.83"
+    4: "Pfizer: 0.64"
+    5: "GitLab: "
+    length: 6
+*/
+
   </script>
 </html>
