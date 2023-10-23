@@ -296,5 +296,26 @@ EPAM is currently trading at 1.68
 GTLB is currently trading at  
 */
 
+// Let's calculate the market capitalization of each company. We need to take the number of shares and multiply it by the price.
+const marketCaps = new Map();
+for (const stock of stockData_2) {
+  const name = stock.at(0); // This gets us a string, but since we will be doing a mathematical operation, we want to wrap it into the Number constructor.
+  const marketCap = Number(stock.at(3)) * Number(stock.at(4)); // set these variables as key/value pairs.
+  marketCaps.set(name, marketCap);
+}
+console.log(marketCaps);
+
+// filtering only large Cap companies
+
+const megaCaps = [];
+const megaCapLimit = 200;
+for (const company of marketCaps) {
+  if (company[1] >= megaCapLimit) {
+    megaCaps.push(company[0]);
+  }
+}
+console.log(`Large Cap companies: ${megaCaps}`);
+
+
   </script>
 </html>
