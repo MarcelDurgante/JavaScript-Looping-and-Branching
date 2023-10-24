@@ -11,6 +11,7 @@
   "author": "Marcel Durgante",
   "license": "ISC",
   "dependencies": {
+    "node": "^21.0.0",
     "node-fetch": "^3.2.10"
   }
 }
